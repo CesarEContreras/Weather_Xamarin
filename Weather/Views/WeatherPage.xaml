@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather.Views.WeatherPage">
+
+    <StackLayout Orientation="Vertical">
+        <CarouselView x:Name="TheCarousel"
+                      HorizontalScrollBarVisibility="Never"
+                      Loop="False"
+                      IndicatorView="indicatorView">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical"
+                                 Padding="0,25,0,0">
+                        <Label Text="{Binding .}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="Currently" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView x:Name="indicatorView"
+               IndicatorsShape="Square"
+               IndicatorColor="LightGray"
+               SelectedIndicatorColor="DarkGray"
+               Padding="0,0,0,50" />
+    </StackLayout>
+</ContentPage>
