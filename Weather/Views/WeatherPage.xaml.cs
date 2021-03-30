@@ -10,14 +10,6 @@ namespace Weather.Views
         public WeatherPage()
         {
             InitializeComponent();
-            var list = new List<string>
-            {
-                "Hey",
-                "Did you check the",
-                "The CarouselView",
-                "In Xamarin.Forms?"
-            };
-            TheCarousel.ItemsSource = list;
         }
     }
 }

@@ -1,19 +1,58 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Weather.ViewModels"
              x:Class="Weather.Views.WeatherPage">
+
+    <ContentPage.BindingContext>
+        <vm:WeatherViewModel/>
+    </ContentPage.BindingContext>
 
     <StackLayout Orientation="Vertical">
         <CarouselView x:Name="TheCarousel"
                       HorizontalScrollBarVisibility="Never"
                       Loop="False"
-                      IndicatorView="indicatorView">
+                      IndicatorView="indicatorView"
+                      ItemsSource="{Binding Weather}">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Vertical"
                                  Padding="0,25,0,0">
-                        <Label Text="{Binding .}" HorizontalOptions="Center" VerticalOptions="Center"/>
-                        <Label Text="Currently" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding City}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="Currently" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Image Source="{Binding CurrentIcon}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label FontSize="22" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding CurrentTemp}" FontAttributes="Bold" FontSize="22" />
+                                            <Span Text=" " />
+                                            <Span Text="°"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Tomorrow" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Image Source="{Binding TomorrowIcon}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label FontSize="22" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="{Binding TomorrowTemp}" FontAttributes="Bold" FontSize="22" />
+                                                <Span Text=" " />
+                                                <Span Text="°"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
                     </StackLayout>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
