@@ -1,5 +1,6 @@
 ﻿using System;
 using RestSharp;
+using Weather.Helpers;
 using Weather.Models;
 
 namespace Weather.Services
@@ -8,11 +9,11 @@ namespace Weather.Services
     {
         private static RestClient client = new RestClient("https://api.openweathermap.org/data/2.5");
 
-        public static async void GetCurrentWeather()
+        public static async void GetCurrentWeatherByCity(string city)
         {
             var request = new RestRequest("weather", DataFormat.Json);
-            request.AddParameter("q", "");
-            request.AddParameter("appid", "");
+            request.AddParameter("q", city);
+            request.AddParameter("appid", Settings.Instance.OpeanWeatherSecret);
 
             try
             {
@@ -22,6 +23,11 @@ namespace Weather.Services
             {
 
             }
+        }
+
+        public static async void GetCurrentAndForecastWeather()
+        {
+            throw new NotImplementedException();
         }
 
     }

@@ -8,7 +8,7 @@
         <vm:WeatherViewModel/>
     </ContentPage.BindingContext>
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical" BackgroundColor="#303643">
         <CarouselView x:Name="TheCarousel"
                       HorizontalScrollBarVisibility="Never"
                       Loop="False"
@@ -17,14 +17,14 @@
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Vertical"
-                                 Padding="0,25,0,0">
+                                 Padding="0,60,0,0">
                         <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding City}" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            <Label Text="Currently" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="{Binding City}" FontSize="30" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="Currently" FontSize="12" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Image Source="{Binding CurrentIcon}" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            <Label FontSize="22" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label FontSize="22" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
@@ -37,10 +37,10 @@
                             </Label>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
-                            <Label Text="Tomorrow" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="Tomorrow" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Image Source="{Binding TomorrowIcon}" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                <Label FontSize="22" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label FontSize="22" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
@@ -61,6 +61,6 @@
                IndicatorsShape="Square"
                IndicatorColor="LightGray"
                SelectedIndicatorColor="DarkGray"
-               Padding="0,0,0,50" />
+               Padding="0,0,0,50"/>
     </StackLayout>
 </ContentPage>
