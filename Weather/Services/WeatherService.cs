@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AppCenter.Crashes;
 using RestSharp;
 using Weather.Helpers;
 using Weather.Models;
@@ -21,7 +22,7 @@ namespace Weather.Services
             }
             catch (Exception ex)
             {
-
+                Crashes.TrackError(ex);
             }
         }
 
