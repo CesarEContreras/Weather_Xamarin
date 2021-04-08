@@ -5,8 +5,7 @@ namespace Weather.Models
     {
         public string City { get; set; }
         public string CurrentIcon { get; set; }
-        public int CurrentTemp { get; set; }
-        public string TomorrowIcon { get; set; }
-        public int TomorrowTemp { get; set; }
+        public int CurrentCelsius { get; set; }
+        public int CurrentFahrenheit { get; set; }
     }
 }
