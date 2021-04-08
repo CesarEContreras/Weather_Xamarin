@@ -20,6 +20,15 @@ namespace Weather.Helpers
             }
         }
 
+        public string WeatherAPIUrl
+        {
+            get
+            {
+                var token = GetSettingFile["weatherapi-url"].ToString();
+                return ValidateToken(token, "#{weatherapi-url}#") ? string.Empty : token;
+            }
+        }
+
         public string OpeanWeatherSecret
         {
             get

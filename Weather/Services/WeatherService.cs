@@ -9,7 +9,7 @@ namespace Weather.Services
 {
     public static class WeatherService
     {
-        private static RestClient client = new RestClient("https://api.openweathermap.org/data/2.5");
+        private static readonly RestClient client = new RestClient(Settings.Instance.WeatherAPIUrl);
 
         public static async Task<Root> GetCurrentWeatherByCity(string city)
         {
@@ -47,6 +47,5 @@ namespace Weather.Services
                 return null;
             }
         }
-
     }
 }
