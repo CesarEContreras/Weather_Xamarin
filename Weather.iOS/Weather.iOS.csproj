@@ -143,4 +143,9 @@
       <Name>Weather</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\Weather\Helpers\settings.json">
+      <Link>settings.json</Link>
+    </BundleResource>
+  </ItemGroup>
 </Project>
