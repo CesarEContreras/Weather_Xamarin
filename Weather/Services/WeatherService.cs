@@ -34,6 +34,7 @@ namespace Weather.Services
             var request = new RestRequest("onecall", DataFormat.Json);
             request.AddParameter("lat", lat);
             request.AddParameter("lon", lon);
+            request.AddParameter("exclude", "minutely");
             request.AddParameter("appid", Settings.Instance.OpeanWeatherSecret);
 
             try

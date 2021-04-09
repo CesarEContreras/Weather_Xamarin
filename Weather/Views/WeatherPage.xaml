@@ -22,7 +22,7 @@
                                  Padding="0,60,0,0">
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding City}" FontSize="30" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            <Label Text="Currently" FontSize="12" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="{Binding WeatherDesc}" FontSize="12" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Image Source="{Binding CurrentIcon}" HorizontalOptions="Center" VerticalOptions="Center"/>
@@ -53,18 +53,22 @@
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Orientation="Vertical"
-                                     Padding="0, 30, 0, 0">
-                            <BoxView HeightRequest="1" Color="White"/>
-                            <ScrollView>
+                                     Padding="0, 60, 0, 0">
+                            <BoxView HeightRequest="1" Color="Gray"/>
+                            <ScrollView Padding="15,0,15,0">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <StackLayout Grid.Row="0" Orientation="Vertical" BindableLayout.ItemsSource="{Binding DailyWeather}">
+                                    <StackLayout Grid.Row="0" Orientation="Horizontal" BindableLayout.ItemsSource="{Binding DailyForecast}">
                                         <BindableLayout.ItemTemplate>
                                             <DataTemplate>
-                                                <Label Text="{Binding Dt}" />
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                                    <Label Text="{Binding WeekDay}" TextColor="White"  HorizontalOptions="Center"/>
+                                                    <Image Source="{Binding WeatherIcon}" HorizontalOptions="Center"/>
+                                                    <Label Text="{Binding MaxTemp}" TextColor="White" HorizontalOptions="Center"/>
+                                                </StackLayout>
                                             </DataTemplate>
                                         </BindableLayout.ItemTemplate>
                                     </StackLayout>
