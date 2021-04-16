@@ -8,7 +8,7 @@
         <vm:WeatherViewModel/>
     </ContentPage.BindingContext>
 
-    <StackLayout Orientation="Vertical" BackgroundColor="#303643">
+    <StackLayout Orientation="Vertical" BackgroundColor="#f9f8f9">
         <CarouselView x:Name="TheCarousel"
                       HorizontalScrollBarVisibility="Never"
                       Loop="False"
@@ -21,13 +21,13 @@
                     <StackLayout Orientation="Vertical"
                                  Padding="0,60,0,0">
                         <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding City}" FontSize="30" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            <Label Text="{Binding WeatherDesc}" FontSize="12" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="{Binding City}" FontSize="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="{Binding WeatherDesc}" FontSize="12" HorizontalOptions="Center" VerticalOptions="Center"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Image Source="{Binding CurrentIcon}" HorizontalOptions="Center" VerticalOptions="Center"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Label FontSize="22" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label FontSize="22" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
@@ -39,7 +39,7 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
-                                <Label FontSize="22" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label FontSize="22" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
@@ -65,9 +65,9 @@
                                         <BindableLayout.ItemTemplate>
                                             <DataTemplate>
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                                    <Label Text="{Binding WeekDay}" TextColor="White"  HorizontalOptions="Center"/>
+                                                    <Label Text="{Binding WeekDay}" HorizontalOptions="Center"/>
                                                     <Image Source="{Binding WeatherIcon}" HorizontalOptions="Center"/>
-                                                    <Label Text="{Binding MaxTemp}" TextColor="White" HorizontalOptions="Center"/>
+                                                    <Label Text="{Binding MaxTemp}" HorizontalOptions="Center"/>
                                                 </StackLayout>
                                             </DataTemplate>
                                         </BindableLayout.ItemTemplate>

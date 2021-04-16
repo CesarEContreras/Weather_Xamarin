@@ -23,16 +23,10 @@ namespace Weather.ViewModels
             Weather.Add(new WeatherInfo()
             {
                 City = "Nutley",
-                CurrentIcon = "https://openweathermap.org/img/wn/10d@2x.png",
-                CurrentCelsius = 27,
-                CurrentFahrenheit = 70
             });
             Weather.Add(new WeatherInfo()
             {
                 City = "Passaic",
-                CurrentIcon = "https://openweathermap.org/img/wn/10d@2x.png",
-                CurrentCelsius = 27,
-                CurrentFahrenheit = 71
             });
 
            LoadWeatherCommand = new Command<WeatherInfo>(async (item) => await LoadWeatherData(item));
@@ -47,7 +41,6 @@ namespace Weather.ViewModels
         private async Task LoadWeatherData(WeatherInfo item)
         {
             IsBusy = true;
-            
 
             try
             {
@@ -109,5 +102,8 @@ namespace Weather.ViewModels
             dtDateTime = dtDateTime.AddSeconds(unixTimestamp).ToLocalTime();
             return dtDateTime;
         }
+
+        // TODO: Create SQLite to store city and the coordinates
+        
     }
 }
